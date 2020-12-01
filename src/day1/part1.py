@@ -3,8 +3,8 @@ def find_two_entries_which_sum_to_target_and_multiply(entries, target_sum):
     if len(entries) == 0:
         return 0
 
-    target_pair_products = map(product_of_a_pair, filter_pairs_by_target_sum(
-        find_unique_pairs_from_entries(entries), target_sum))
+    target_pair_products = list(map(product_of_a_pair, filter_pairs_by_target_sum(
+        find_unique_pairs_from_entries(entries), target_sum)))
 
     if (len(target_pair_products)) > 0:
         return target_pair_products[0]
@@ -12,14 +12,26 @@ def find_two_entries_which_sum_to_target_and_multiply(entries, target_sum):
 
 def find_unique_pairs_from_entries(entries):
     '''Finds unique pairs from the list of entries'''
-    return []
+    if (entries == None or len(entries) < 2):
+        return []
+
+    unique_pairs = []
+    for first_index in range(len(entries) - 1):
+        for second_index in range(len(entries) - (first_index + 1)):
+            unique_pairs.append(
+                [entries[first_index], entries[second_index + first_index + 1]])
+
+    return unique_pairs
 
 
 def filter_pairs_by_target_sum(pairs, target_sum):
     '''Filters a list of pairs by the target_sum'''
-    return []
+    return list(filter(lambda pair: pair[0] + pair[1] == target_sum, pairs))
 
 
 def product_of_a_pair(pair):
     '''Returns the product of a pair, e.g. a pair of [3, 4] would return 12'''
-    return 0
+    if (pair == None or len(pair) != 2):
+        return 0
+
+    return pair[0] * pair[1]

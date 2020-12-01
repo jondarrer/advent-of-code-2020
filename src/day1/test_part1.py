@@ -50,14 +50,26 @@ def test_filter_pairs_by_target_sum_two_one():
 
 
 def test_product_of_a_pair_none():
-    pairs = None
-    actual = part1.product_of_a_pair(pairs)
+    pair = None
+    actual = part1.product_of_a_pair(pair)
     assert actual == 0
 
 
 def test_product_of_a_pair_one():
-    pairs = [2, 3]
-    actual = part1.product_of_a_pair(pairs)
+    pair = []
+    actual = part1.product_of_a_pair(pair)
+    assert actual == 0
+    pair = [1]
+    actual = part1.product_of_a_pair(pair)
+    assert actual == 0
+    pair = [1, 2, 3]
+    actual = part1.product_of_a_pair(pair)
+    assert actual == 0
+
+
+def test_product_of_a_pair_two():
+    pair = [2, 3]
+    actual = part1.product_of_a_pair(pair)
     assert actual == 6
 
 
