@@ -3,7 +3,7 @@ def find_two_entries_which_sum_to_target_and_multiply(entries, target_sum):
     if len(entries) == 0:
         return 0
 
-    target_pair_products = map(product_of_a_pair, filter_pairs_by_sum(
+    target_pair_products = map(product_of_a_pair, filter_pairs_by_target_sum(
         find_unique_pairs_from_entries(entries), target_sum))
 
     if (len(target_pair_products)) > 0:
@@ -15,7 +15,7 @@ def find_unique_pairs_from_entries(entries):
     return []
 
 
-def filter_pairs_by_sum(pairs, target_sum):
+def filter_pairs_by_target_sum(pairs, target_sum):
     '''Filters a list of pairs by the target_sum'''
     return []
 
