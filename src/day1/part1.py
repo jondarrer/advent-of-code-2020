@@ -1,10 +1,15 @@
+import read_input_file
+
+
 def find_two_entries_which_sum_to_target_and_multiply(entries, target_sum):
     '''Returns the product of two entries which when summed match the target_sum'''
     if len(entries) == 0:
         return 0
 
-    target_pair_products = list(map(product_of_a_pair, filter_pairs_by_target_sum(
-        find_unique_pairs_from_entries(entries), target_sum)))
+    pairs = filter_pairs_by_target_sum(
+        find_unique_pairs_from_entries(entries), target_sum)
+    target_pair_products = list(map(product_of_a_pair, pairs))
+    print(pairs)
 
     if (len(target_pair_products)) > 0:
         return target_pair_products[0]
@@ -35,3 +40,12 @@ def product_of_a_pair(pair):
         return 0
 
     return pair[0] * pair[1]
+
+
+if __name__ == '__main__':
+    result = find_two_entries_which_sum_to_target_and_multiply(
+        read_input_file.read(
+            '/Users/jondarrer/Code/advent-of-code-2020/src/input/day1.txt'),
+        2020
+    )
+    print(result)
