@@ -2,14 +2,14 @@ import read_input_file
 
 
 def find_three_entries_which_sum_to_target_and_multiply(entries, target_sum):
-    '''Returns the product of two entries which when summed match the target_sum'''
+    '''Returns the product of three entries which when summed match the target_sum'''
     if len(entries) == 0:
         return 0
 
     tuples = filter_tuples_by_target_sum(
         find_unique_tuples_from_entries(entries), target_sum)
-    target_tuple_products = list(map(product_of_a_tuple, tuples))
     print(tuples)
+    target_tuple_products = list(map(product_of_a_tuple, tuples))
 
     if (len(target_tuple_products)) > 0:
         return target_tuple_products[0]

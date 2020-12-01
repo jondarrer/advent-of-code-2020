@@ -8,8 +8,8 @@ def find_two_entries_which_sum_to_target_and_multiply(entries, target_sum):
 
     pairs = filter_pairs_by_target_sum(
         find_unique_pairs_from_entries(entries), target_sum)
-    target_pair_products = list(map(product_of_a_pair, pairs))
     print(pairs)
+    target_pair_products = list(map(product_of_a_pair, pairs))
 
     if (len(target_pair_products)) > 0:
         return target_pair_products[0]
