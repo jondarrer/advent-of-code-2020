@@ -1,4 +1,5 @@
 def find_two_entries_which_sum_to_target_and_multiply(entries, target_sum):
+    '''Returns the product of two entries which when summed match the target_sum'''
     if len(entries) == 0:
         return 0
 
