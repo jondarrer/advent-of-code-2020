@@ -1,6 +1,18 @@
 import part1and2
 
 
+def test_find_unique_groups_from_entries_2_l0():
+    entries = [1, 2, 3, 4]
+    actual = part1and2.find_unique_groups_from_entries(entries, 2, 0)
+    assert actual == []
+
+
+def test_find_unique_groups_from_entries_2_l1():
+    entries = [1, 2, 3, 4]
+    actual = part1and2.find_unique_groups_from_entries(entries, 2, 1)
+    assert actual == []
+
+
 def test_find_unique_groups_from_entries_2_blank():
     entries = []
     actual = part1and2.find_unique_groups_from_entries(entries, 2)
@@ -85,42 +97,21 @@ def test_product_of_a_group_none():
     assert actual == 0
 
 
-def test_product_of_a_group_2_one():
-    pair = []
-    actual = part1and2.product_of_a_group(pair)
+def test_product_of_a_group():
+    group = []
+    actual = part1and2.product_of_a_group(group)
     assert actual == 0
-    pair = [1]
-    actual = part1and2.product_of_a_group(pair)
-    assert actual == 0
-    pair = [1, 2, 3]
-    actual = part1and2.product_of_a_group(pair)
-    assert actual == 0
-
-
-def test_product_of_a_group_2_two():
-    pair = [2, 3]
-    actual = part1and2.product_of_a_group(pair)
+    group = [1]
+    actual = part1and2.product_of_a_group(group)
+    assert actual == 1
+    group = [1, 2]
+    actual = part1and2.product_of_a_group(group)
+    assert actual == 2
+    group = [1, 2, 3]
+    actual = part1and2.product_of_a_group(group)
     assert actual == 6
-
-
-def test_product_of_a_group_3_one():
-    tuple = []
-    actual = part1and2.product_of_a_group(tuple)
-    assert actual == 0
-    tuple = [1]
-    actual = part1and2.product_of_a_group(tuple)
-    assert actual == 0
-    tuple = [1, 2]
-    actual = part1and2.product_of_a_group(tuple)
-    assert actual == 0
-    tuple = [1, 2, 3, 4]
-    actual = part1and2.product_of_a_group(tuple)
-    assert actual == 0
-
-
-def test_product_of_a_group_3_two():
-    tuple = [2, 3, 4]
-    actual = part1and2.product_of_a_group(tuple)
+    group = [1, 2, 3, 4]
+    actual = part1and2.product_of_a_group(group)
     assert actual == 24
 
 
