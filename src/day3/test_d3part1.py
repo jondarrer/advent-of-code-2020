@@ -48,5 +48,5 @@ def test_traverse_map_at_angle_1():
     start_pos = {'x': 1, 'y': 1}
     d_x = 3
     d_y = 1
-    actual = d3part1.what_is_in_position(the_map, start_pos, d_x, d_y)
+    actual = d3part1.traverse_map_at_angle(the_map, start_pos, d_x, d_y)
     assert actual == {'open': 3, 'tree': 7}
