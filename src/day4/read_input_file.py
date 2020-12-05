@@ -5,7 +5,6 @@ def read(filename):
     # https://stackoverflow.com/questions/15599639/what-is-the-perfect-counterpart-in-python-for-while-not-eof
     with open(filename, 'r') as reader:
         # Read and print the entire file line by line
-        print('Hello')
         while line := reader.readline():
             line = line.strip("\n")
             if (line == ''):
