@@ -26,7 +26,7 @@ def test_convert_boarding_pass_to_seat_4():
 
 
 def test_convert_binary_to_decimal_b_1():
-    binary = 'BFFFBBF'
+    binary = 'FBFBBFF'
     actual = d5part1.convert_binary_to_decimal(binary, 'B')
     assert actual == 44
 
