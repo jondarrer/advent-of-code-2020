@@ -31,7 +31,9 @@ def test_number_of_unique_answers_per_group_5():
     assert actual == 1
 
 
-def test_total_number_of_unique_answers():
-    all_group_answers = []
-    actual = d6part1.total_number_of_unique_answers(all_group_answers)
+def test_total_number_of_unique_answers_per_group():
+    all_group_answers = [['abc'], ['a', 'b', 'c'],
+                         ['ab', 'ac'], ['a', 'a', 'a', 'a'], ['b']]
+    actual = d6part1.total_number_of_unique_answers_per_group(
+        all_group_answers)
     assert actual == 11
